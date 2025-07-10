@@ -29,7 +29,7 @@
 	}
 
 	h1 {
-		2: 2px 2px 4px rgba(0, 0, 0, 0.6);
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 		color: gold;
 	}
 }
