@@ -10,7 +10,6 @@ export const useUIStore = defineStore("ui", {
 		leagues: [] as League[],
 	}),
 	getters: {
-		sortedLeagues: (state) => [...state.leagues].sort((a, b) => a.strLeague.localeCompare(b.strLeague)),
 		filteredLeagues: (state) => {
 			const search = state.searchQuery?.toLowerCase() || "";
 			const selectedSport = state.selectedSport?.toLowerCase() || "";
@@ -47,10 +46,14 @@ export const useUIStore = defineStore("ui", {
 			if (this.loadedBadges?.[leagueId]) {
 				return this.loadedBadges?.[leagueId];
 			}
-
-			const badge = await getSeasonBadge(leagueId);
-			this.loadedBadges[leagueId] = badge;
-			return badge;
+			try {
+				const badge = await getSeasonBadge(leagueId);
+				this.loadedBadges[leagueId] = badge;
+				return badge;
+			} catch (err) {
+				console.error("Failed to fetch badge", err);
+				return null;
+			}
 		},
 
 		async fetchLeagues(clearExistingData?: boolean): Promise<League[]> {

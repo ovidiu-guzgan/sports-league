@@ -1,5 +1,8 @@
-# Vue 3 + TypeScript + Vite
+## Sports League Explorer
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+- used Vue 3 (Even dough i have some time since i last worked with Vue - Currently working with Angular) because I understood that the role would imply working with this framework.
+- used Pinia for storing data and caching loaded images;
+- used PrimeVue + PrimeFlex for components and utility classes;
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+
+
